@@ -37,17 +37,17 @@ export default function Router() {
   return useRoutes([
     // Dashboard Routes
     {
-      path: "dashboard",
+      path: "/",
       element: <DashboardLayout />,
       children: [
-        { element: <Navigate to="/dashboard/one" replace /> },
+        { element: <Navigate to="/one" replace /> },
         { path: "one", element: <GeneralApp /> },
         // { path: "two", element: <PageTwo /> },
         // { path: "three", element: <PageThree /> },
         {
           path: "app",
           children: [
-            { element: <Navigate to="/dashboard/app/four" replace /> },
+            { element: <Navigate to="/app/four" replace /> },
             // { path: "four", element: <PageFour /> },
             // { path: "five", element: <PageFive /> },
             // { path: "six", element: <PageSix /> },
@@ -65,11 +65,11 @@ export default function Router() {
         { path: "*", element: <Navigate to="/404" replace /> },
       ],
     },
-    {
-      path: "/",
-      element: <MainLayout />,
-      // children: [{ element: <LandingPage /> }],
-    },
+    // {
+    //   path: "/",
+    //   element: <MainLayout />,
+    //   // children: [{ element: <LandingPage /> }],
+    // },
     { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
